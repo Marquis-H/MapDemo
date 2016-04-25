@@ -1,0 +1,25 @@
+PODS:
+  - BaiduMapKit (2.10.2)
+  - SSZipArchive (1.1)
+  - SwiftyJSON (2.3.2)
+
+DEPENDENCIES:
+  - BaiduMapKit
+  - SSZipArchive
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 2a5b70f06001316d4fb54501edc70b4084705da0
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+SPEC CHECKSUMS:
+  BaiduMapKit: b1706a062597c70ec62a0cca93212cba1d3017e1
+  SSZipArchive: de3d215ab73f87db627f81f2ce24f1731e3886c3
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
+
+COCOAPODS: 0.39.0
