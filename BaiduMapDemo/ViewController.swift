@@ -33,12 +33,8 @@ class ViewController: UIViewController, BMKMapViewDelegate, BMKOfflineMapDelegat
         let exsit  = fileManager.fileExistsAtPath(mapDataPath)
         if exsit == false {
             let mapPath = NSBundle.mainBundle().pathForResource("map_data", ofType: "zip")!
-            do {
-                // try fileManager.copyItemAtPath(mapPath, toPath: documentPath.last!)
-                SSZipArchive.unzipFileAtPath(mapPath, toDestination: documentPath.last!)
-            }catch let error as NSError{
-                NSLog("\(error)")
-            }
+            //将地图数据包解压到App的Documents/vmp
+            SSZipArchive.unzipFileAtPath(mapPath, toDestination: documentPath.last!)
         }
         
         // Do any additional setup after loading the view, typically from a nib.
@@ -65,10 +61,6 @@ class ViewController: UIViewController, BMKMapViewDelegate, BMKOfflineMapDelegat
         locationService.distanceFilter = 10
         locationService.startUserLocationService()
         self.followLocation()
-    }
-    
-    private func move(){
-        
     }
     
     //添加标注
@@ -116,14 +108,7 @@ class ViewController: UIViewController, BMKMapViewDelegate, BMKOfflineMapDelegat
         return nil
     }
     
-    func mapView(mapView: BMKMapView!, viewForOverlay overlay: BMKOverlay!) -> BMKOverlayView! {
-        if (overlay as? BMKGroundOverlay) != nil{
-            let groundView = BMKGroundOverlayView(overlay: overlay)
-            
-            return groundView
-        }
-        return nil
-    }
+
     
     func onGetOfflineMapState(type: Int32, withState state: Int32) {
         if type == 0 {
@@ -154,9 +139,9 @@ class ViewController: UIViewController, BMKMapViewDelegate, BMKOfflineMapDelegat
     }
     
     func followLocation() {
-        //进入跟随态
+        //进入普通定位
         _mapView!.showsUserLocation = false
-        _mapView!.userTrackingMode = BMKUserTrackingModeFollow
+        _mapView!.userTrackingMode = BMKUserTrackingModeNone
         _mapView!.showsUserLocation = true
         _mapView!.scrollEnabled = true  //允許用户移动地图
         _mapView!.updateLocationData(userLocation)

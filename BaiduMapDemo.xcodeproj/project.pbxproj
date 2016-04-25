@@ -62,6 +62,7 @@
 		95E756141CCE370F005B783C /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		95E756161CCE3713005B783C /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "../../../Library/Developer/Xcode/DerivedData/BaiduMapDemo-bibdaejjodkmjjhhawznlmpacopy/Build/Products/Debug-iphonesimulator/SwiftyJSON.framework"; sourceTree = "<group>"; };
 		95E756181CCE3717005B783C /* SSZipArchive.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SSZipArchive.framework; path = "Pods/../build/Debug-iphoneos/SSZipArchive.framework"; sourceTree = "<group>"; };
+		95EA4EB21CCE858E007F910C /* ZipArchive.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ZipArchive.h; path = ../Pods/SSZipArchive/SSZipArchive/ZipArchive.h; sourceTree = "<group>"; };
 		B4182DD4473D6EBD8CAA647E /* Pods_BaiduMapDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BaiduMapDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0FDA6BA78B1047EC1DB1A44 /* Pods-BaiduMapDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BaiduMapDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BaiduMapDemo/Pods-BaiduMapDemo.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -147,6 +148,7 @@
 				9584A1E41CCE30D700279CEA /* AppDelegate.swift */,
 				9584A1F01CCE30D700279CEA /* Info.plist */,
 				9584A21D1CCE34EB00279CEA /* BMKSwiftDemo-Bridging-Header.h */,
+				95EA4EB21CCE858E007F910C /* ZipArchive.h */,
 			);
 			path = BaiduMapDemo;
 			sourceTree = "<group>";
@@ -283,6 +285,7 @@
 				TargetAttributes = {
 					9584A1E01CCE30D700279CEA = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = GYH73D7FMS;
 					};
 					9584A1F41CCE30D800279CEA = {
 						CreatedOnToolsVersion = 7.3;
@@ -541,10 +544,8 @@
 			baseConfigurationReference = C0FDA6BA78B1047EC1DB1A44 /* Pods-BaiduMapDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BaiduMapDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.marquis.swift.BaiduMapDemo;
@@ -558,10 +559,8 @@
 			baseConfigurationReference = 3AF66B70460D537CA8B9E914 /* Pods-BaiduMapDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = BaiduMapDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = demo.marquis.swift.BaiduMapDemo;
