@@ -36,8 +36,7 @@ class ViewController: UIViewController, BMKMapViewDelegate, BMKLocationServiceDe
             //将地图数据包解压到App的Documents/vmp
             SSZipArchive.unzipFileAtPath(mapPath, toDestination: documentPath.last!)
         }
-        
-        // Do any additional setup after loading the view, typically from a nib.
+        //初始化地图
         _mapView = BMKMapView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         _mapView!.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(_mapView!)
@@ -80,6 +79,7 @@ class ViewController: UIViewController, BMKMapViewDelegate, BMKLocationServiceDe
         }
     }
     
+    //数据转换
     func changeData() -> JSON {
         let path = NSBundle.mainBundle().pathForResource("Locations", ofType: "json")
         let jsonData = NSData(contentsOfFile: path!)
